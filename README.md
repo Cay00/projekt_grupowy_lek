@@ -1,4 +1,4 @@
-﻿# projekt_grupowy_lek
+﻿# MyBetterness
 
 Dzień dobry.
 
