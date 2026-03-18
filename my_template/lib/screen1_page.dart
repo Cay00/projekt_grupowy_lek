@@ -5,12 +5,10 @@ class Screen1Page extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text(
-          'screen 1',
-          style: TextStyle(fontSize: 32, fontWeight: FontWeight.w700),
-        ),
+    return const Center(
+      child: Text(
+        'screen 1',
+        style: TextStyle(fontSize: 32, fontWeight: FontWeight.w700),
       ),
     );
   }
