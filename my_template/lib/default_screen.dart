@@ -2,9 +2,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'components/app_bottom_nav_bar.dart';
 import 'components/app_header.dart';
-import 'home_page.dart';
-import 'login_page.dart';
-import 'screen1_page.dart';
+import 'home_screen/home_page.dart';
+import 'login_page/login_page.dart';
+import 'calendar_screen/calendar_page.dart';
 import 'screen2_page.dart';
 import 'screen3_page.dart';
 import 'screen4_page.dart';
@@ -21,7 +21,7 @@ class _DefaultScreenState extends State<DefaultScreen> {
 
   final List<String> headerTitles = const [
     'MyBetterness',
-    'Screen1',
+    'Care Calendar',
     'Screen2',
     'Screen3',
     'Screen4',
@@ -29,7 +29,7 @@ class _DefaultScreenState extends State<DefaultScreen> {
 
   final List<Widget> tabs = const [
     HomePageContent(),
-    Screen1Page(),
+    CalendarPage(),
     Screen2Page(),
     Screen3Page(),
     Screen4Page(),
