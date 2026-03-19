@@ -17,8 +17,23 @@ class HomePage extends StatelessWidget {
 
 class HomePageContent extends StatelessWidget {
   const HomePageContent({super.key});
+  List<CalendarDayOption> _getDays() {
+    final now = DateTime.now();
+    final start = now.subtract(Duration(days: now.weekday - 1));
+    const labels = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
+    return List.generate(7, (index) {
+      final date = start.add(Duration(days: index));
+      return CalendarDayOption(
+        label: labels[index],
+        dayNumber: date.day,
+        isToday: date.day == now.day,
+      );
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
+    final days = _getDays();
     return SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -108,11 +123,55 @@ class HomePageContent extends StatelessWidget {
               color: Color(0xff12243d),
             ),
           ),
+          const SizedBox(height: 32),
+          const Text(
+            "Care Calendar",
+            style: TextStyle(
+              fontSize: 22,
+              fontWeight: FontWeight.bold,
+              color: Color(0xff12243d),
+            ),
+          ),
           const SizedBox(height: 16),
           CalendarDayPicker(
-            days: const [],
-            selectedIndex: 0,
+            days: days,
+            selectedIndex: 3,
             onDaySelected: (index) {},
+          ),
+          const SizedBox(height: 24),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            decoration: const BoxDecoration(
+              color: Color(0xff2f6df6),
+              borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: const [
+                Text(
+                  "1:30 AM - 7:00 PM",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Text(
+                  "URGENT",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 10,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          const CalendarEventCard(
+            title: "Medication Plan",
+            subtitle: "12:00 - 7:30 AM",
+            timeLabel: "",
+            category: "",
+            accentColor: Colors.transparent,
           ),
           const SizedBox(height: 12),
           const CalendarEventCard(
@@ -122,8 +181,6 @@ class HomePageContent extends StatelessWidget {
             category: "Health",
             accentColor: Colors.blue,
           ),
-
-          // 5. DANE ZDROWOTNE
           const SizedBox(height: 32),
           Container(
             padding: const EdgeInsets.all(24),
