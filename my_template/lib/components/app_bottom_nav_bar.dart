@@ -23,24 +23,24 @@ class AppBottomNavBar extends StatelessWidget {
           label: 'Home',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.filter_1_outlined),
-          activeIcon: Icon(Icons.filter_1),
-          label: 'Screen 1',
+          icon: Icon(Icons.calendar_month_outlined),
+          activeIcon: Icon(Icons.calendar_month),
+          label: 'Calendar',
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.filter_2_outlined),
           activeIcon: Icon(Icons.filter_2),
-          label: 'Screen 2',
+          label: 'Overview',
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.filter_3_outlined),
           activeIcon: Icon(Icons.filter_3),
-          label: 'Screen 3',
+          label: 'Services',
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.filter_4_outlined),
           activeIcon: Icon(Icons.filter_4),
-          label: 'Screen 4',
+          label: 'Profile',
         ),
       ],
     );
