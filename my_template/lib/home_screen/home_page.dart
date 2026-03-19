@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-
+import '../components/calendar/calendar_day_picker.dart';
+import '../components/calendar/calendar_event_card.dart';
+import '../data/calendar_mock_data.dart';
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
@@ -49,6 +51,29 @@ class HomePageContent extends StatelessWidget {
                   fontSize: 30,
                   fontWeight: FontWeight.bold,
                 ),
+              ),
+              const SizedBox(height: 32),
+              const Text(
+                "Upcoming Events",
+                style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: Color(0xff12243d)),
+              ),
+              const SizedBox(height: 16),
+              const CalendarDayPicker(days: [], selectedIndex: 0), // uproszczony podgląd
+              const SizedBox(height: 16),
+              const CalendarEventCard(
+                title: "Medication Plan",
+                subtitle: "12:00 - 7:30 AM",
+                timeLabel: "1:30 AM",
+                category: "Urgent",
+                accentColor: Colors.red,
+              ),
+              const SizedBox(height: 12),
+              const CalendarEventCard(
+                title: "Rehab Session",
+                subtitle: "Physical Therapy - Dr. Soan",
+                timeLabel: "4:00 PM",
+                category: "Health",
+                accentColor: Colors.blue,
               ),
               const SizedBox(height: 12),
               const Text(
