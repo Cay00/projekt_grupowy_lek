@@ -5,7 +5,7 @@ import 'components/app_header.dart';
 import 'home_screen/home_page.dart';
 import 'login_page/login_page.dart';
 import 'calendar_screen/calendar_page.dart';
-import 'screen2_page.dart';
+import 'find_help.dart';
 import 'screen3_page.dart';
 import 'screen4_page.dart';
 
@@ -22,7 +22,7 @@ class _DefaultScreenState extends State<DefaultScreen> {
   final List<String> headerTitles = const [
     'MyBetterness',
     'Care Calendar',
-    'Screen2',
+    'Find Help',
     'Screen3',
     'Screen4',
   ];
@@ -30,7 +30,7 @@ class _DefaultScreenState extends State<DefaultScreen> {
   final List<Widget> tabs = const [
     HomePageContent(),
     CalendarPage(),
-    Screen2Page(),
+    FindHelpPage(),
     Screen3Page(),
     Screen4Page(),
   ];
