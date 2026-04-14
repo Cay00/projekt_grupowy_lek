@@ -20,9 +20,15 @@ class _DefaultScreenState extends State<DefaultScreen> {
   int currentIndex = 0;
 
   final List<String> headerTitles = const [
+<<<<<<< feat/find_help
     'MyBetterness',
     'Care Calendar',
     'Find Help',
+=======
+    '',
+    '',
+    'Screen2',
+>>>>>>> main
     'Screen3',
     'Screen4',
   ];
@@ -47,20 +53,22 @@ class _DefaultScreenState extends State<DefaultScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 208, 232, 255),
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(20),
+          padding: const EdgeInsets.all(0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              AppHeader(
-                title: headerTitles[currentIndex],
-                onLogout: () {
-                  logout(context);
-                },
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: AppHeader(
+                  title: headerTitles[currentIndex],
+                  onLogout: () {
+                    logout(context);
+                  },
+                ),
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 16),
               Expanded(
                 child: IndexedStack(index: currentIndex, children: tabs),
               ),
