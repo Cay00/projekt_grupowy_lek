@@ -58,7 +58,7 @@ class _LoginPageState extends State<LoginPage> {
 
   Widget _sectionTitle(String title) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 10, top: 4),
+      padding: const EdgeInsets.only(bottom: 14, top: 6),
       child: Text(
         title,
         style: const TextStyle(
@@ -266,7 +266,7 @@ class _LoginPageState extends State<LoginPage> {
                         textInputAction: TextInputAction.next,
                         decoration: _fieldDecoration('Imię'),
                       ),
-                      const SizedBox(height: 12),
+                      const SizedBox(height: 18),
                       TextField(
                         controller: lastNameController,
                         textCapitalization: TextCapitalization.words,
@@ -281,14 +281,14 @@ class _LoginPageState extends State<LoginPage> {
                         textInputAction: TextInputAction.next,
                         decoration: _fieldDecoration('Wzrost (cm)'),
                       ),
-                      const SizedBox(height: 12),
+                      const SizedBox(height: 18),
                       TextField(
                         controller: weightController,
                         keyboardType: TextInputType.number,
                         textInputAction: TextInputAction.next,
                         decoration: _fieldDecoration('Waga (kg)'),
                       ),
-                      const SizedBox(height: 12),
+                      const SizedBox(height: 18),
                       TextField(
                         controller: ageController,
                         keyboardType: TextInputType.number,
@@ -305,7 +305,7 @@ class _LoginPageState extends State<LoginPage> {
                       textInputAction: TextInputAction.next,
                       decoration: _fieldDecoration('E-mail'),
                     ),
-                    const SizedBox(height: 12),
+                    const SizedBox(height: 18),
                     TextField(
                       controller: passwordController,
                       obscureText: true,

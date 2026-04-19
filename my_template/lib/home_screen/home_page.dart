@@ -18,7 +18,7 @@ class HomePageContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      padding: const EdgeInsets.fromLTRB(16, 0, 16, 110),
+      padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -200,36 +200,6 @@ class HomePageContent extends StatelessWidget {
                   label: 'Leki dziś',
                   value: '3 / 3 przyjęte',
                   onOpenDetail: () => openMedicationsDetail(context),
-                ),
-              ],
-            ),
-          ),
-          const SizedBox(height: 16),
-          Container(
-            width: double.infinity,
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: const Color(0xffeff4ff),
-              borderRadius: BorderRadius.circular(16),
-            ),
-            child: Row(
-              children: [
-                const Icon(
-                  Icons.info_outline,
-                  color: Color(0xff2f6df6),
-                  size: 22,
-                ),
-                const SizedBox(width: 12),
-                Expanded(
-                  child: Text(
-                    'Podane wartości są przykładowe. Podłącz urządzenie lub uzupełnij wpisy, aby spersonalizować ten ekran.',
-                    style: TextStyle(
-                      fontSize: 13,
-                      fontWeight: FontWeight.w600,
-                      color: const Color(0xff222222).withValues(alpha: 0.85),
-                      height: 1.35,
-                    ),
-                  ),
                 ),
               ],
             ),
