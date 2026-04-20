@@ -19,22 +19,26 @@ class _DefaultScreenState extends State<DefaultScreen> {
 
   final List<String> headerTitles = const [
     'MyBetterness',
+    'Przyjmowane leki',
     'Kalendarz opieki',
     'Znajdź pomoc',
-    'Informacje o zdrowiu',
     'Profil',
-  ];
-
-  final List<Widget> tabs = const [
-    HomePageContent(),
-    CalendarPage(),
-    FindHelpPage(),
-    Screen3Page(),
-    ProfilePage(),
   ];
 
   @override
   Widget build(BuildContext context) {
+    final tabs = <Widget>[
+      HomePageContent(
+        onOpenFindHelp: () {
+          setState(() => currentIndex = 3);
+        },
+      ),
+      const Screen3Page(),
+      const CalendarPage(),
+      const FindHelpPage(),
+      const ProfilePage(),
+    ];
+
     return PopScope(
       canPop: currentIndex == 0,
       onPopInvokedWithResult: (didPop, result) {
@@ -49,7 +53,7 @@ class _DefaultScreenState extends State<DefaultScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              if (currentIndex != 2) ...[
+              if (currentIndex != 3) ...[
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 16),
                   child: AppHeader(title: headerTitles[currentIndex]),
